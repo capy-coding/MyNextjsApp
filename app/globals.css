@@ -1,15 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +18,261 @@
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
+  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.circle-text {
+  animation: circleRotate 10s linear infinite;
+}
+
+@keyframes circleRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.circle-text span {
+  position: absolute;
+  left: 50%;
+  transform-origin: 0 60px;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 768px) {
+  .circle-text span {
+    transform-origin: 0 80px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wrapper,
+.content {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.content {
+  overflow-x: hidden;
+}
+
+.content .section {
+  width: 100%;
+  height: 100vh;
+}
+
+.content .section.hero {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image-container {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  perspective: 500px;
+  overflow: hidden;
+}
+
+.card-content {
+  transform: translateY(25px);
+  opacity: 0; /* Start hidden */
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.relative:hover .card-content {
+  transform: translateY(0);
+  opacity: 1; /* Fade in */
+}
+.card-title {
+  transform: translateY(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.relative:hover .card-title {
+  transform: translateY(-25px);
+}
+
+
+.a-section-marquee-box {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.a-section-marquee-box h2 {
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-size: 7em;
+  font-weight: 100;
+  flex-shrink: 0;
+  padding: 0 10px;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  transform: translateX(0);
+  animation: a-text-scroll 15s linear infinite;
+}
+@keyframes a-text-scroll {
+  0% { transform: translate3d(-100%, 0, 0); }
+  100% { transform: translate3d(0%, 0, 0); }
+}
+
+
+
+
+
+#timeline {
+  &:hover {
+    .tl-item {
+      width: 33.3333%;
+    }
+  }
+}
+
+.tl-item {
+  transform: translate3d(0, 0, 0);
+  position: relative;
+  width: 25%;
+  height: 100vh;
+  min-height: 600px;
+  color: #fff;
+  overflow: hidden;
+  transition: width 0.5s ease;
+
+  &:before,
+  &:after {
+    transform: translate3d(0, 0, 0);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:after {
+    background: transparentize(#e0251b, 0.15);
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+
+  &:before {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 75%
+    );
+    z-index: 1;
+    opacity: 0;
+    transform: translate3d(0, 0, 0) translateY(50%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  &:hover {
+    width: 30% !important;
+
+    &:after {
+      opacity: 0;
+    }
+
+    &:before {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) translateY(0);
+      transition: opacity 1s ease, transform 1s ease 0.25s;
+    }
+
+    .tl-content {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.75s ease 0.5s;
+    }
+
+    .tl-bg {
+      filter: grayscale(0);
+    }
+  }
+}
+
+.tl-content {
+  transform: translate3d(0, 0, 0) translateY(25px);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 0 1.618em;
+  top: 55%;
+  opacity: 0;
+
+  h1 {
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.44rem;
+    font-weight: normal;
+  }
+}
+
+.tl-year {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  color: white;
+
+  p {
+    font-size: 1.728rem;
+  }
+}
+
+.tl-bg {
+  transform: translate3d(0, 0, 0);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center center;
+  transition: filter 0.5s ease;
+  filter: grayscale(100%);
 }
