@@ -1,4 +1,5 @@
 import AboutMe from "./Components/AboutMe";
+import ContactMe from "./Components/ContactMe";
 import Projects from "./Components/Projects";
 import Zoom from "./Components/Zoom";
 
@@ -8,6 +9,7 @@ export default function Home() {
       <Zoom/>
       <AboutMe/>
       <Projects/>
+      <ContactMe/>
     </div>
   );
 }

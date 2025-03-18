@@ -129,26 +129,6 @@ body {
   overflow: hidden;
 }
 
-.card-content {
-  transform: translateY(25px);
-  opacity: 0; /* Start hidden */
-  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
-}
-
-.relative:hover .card-content {
-  transform: translateY(0);
-  opacity: 1; /* Fade in */
-}
-.card-title {
-  transform: translateY(0);
-  transition: transform 0.6s ease-in-out;
-}
-
-.relative:hover .card-title {
-  transform: translateY(-25px);
-}
-
-
 .a-section-marquee-box {
   height: 180px;
   display: flex;

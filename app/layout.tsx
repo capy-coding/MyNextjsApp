@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Components/Navbar";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
 
 const roboto = Roboto_Condensed({
   weight: ['300', '400', '600', '700'],
@@ -24,6 +26,7 @@ export default function RootLayout({
         className={`${roboto.className} antialiased`}
       >
         <Navbar/>
+        <ToastContainer/>
         {children}
       </body>
     </html>
