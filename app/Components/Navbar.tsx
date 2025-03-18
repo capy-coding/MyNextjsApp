@@ -50,7 +50,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="menu-container z-30" ref={container}>
+    <div className="menu-container z-50 fixed" ref={container}>
       <div className="fixed w-full p-[2em] flex justify-between items-center z-10 bg-transparent text-xl font-extrabold">
         <div className="menu-open cursor-pointer absolute top-5 right-5 text-black" onClick={toggleMenu}>
           <svg
