@@ -74,28 +74,13 @@ const Projects = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-x-3 p-3 text-[#2f2f2f]">
-      <div className="flex flex-col">
-        <div className="p-10 relative overflow-hidden w-full h-full">
-            <Link href="/projects">
-                <button
-                className="w-full sm:w-40 text-[#2f2f2f] relative h-[50px] overflow-hidden border border-[#2f2f2f] bg-white px-3 shadow-2xl transition-all 
-                before:absolute before:bottom-0 before:left-0 before:top-0 before:h-full before:w-0 before:bg-[#2f2f2f] before:transition-all before:duration-500 hover:text-white hover:shadow-[#2f2f2f]
-                hover:before:left-0 hover:before:w-full cursor-pointer"
-            >
-                <span className="relative z-10">
-                MY PROJECTS<span className="ml-3 text-xl">&#8594;</span>
-                </span>
-            </button>
-            </Link>
-        </div>
-      </div>
-
-      <div className="scroll-col flex flex-col md:mt-30">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 p-8 text-[#2f2f2f] items-center justify-center">
+      
+      <div className="scroll-col flex flex-col md:mt-30 md:items-end">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="relative rounded overflow-hidden w-full h-96 xl:h-128"
+            className="relative rounded overflow-hidden aspect-square w-full md:w-4/5"
           >
             <p className="card-title absolute inset-0 flex items-end justify-start font-[700] p-3 text-base w-full h-full z-10">
               {project.title}
@@ -146,11 +131,11 @@ const Projects = () => {
         ))}
       </div>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col md:items-start">
         {projects2.map((project, index) => (
           <div
             key={index}
-            className="relative rounded overflow-hidden w-full h-96 xl:h-128"
+            className="relative rounded overflow-hidden aspect-square w-full md:w-4/5"
           >
             <p className="card-title absolute inset-0 flex items-end justify-start font-[700] p-3 text-base w-full h-full z-10">
               {project.title}
