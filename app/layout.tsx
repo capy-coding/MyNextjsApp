@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./Components/Navbar";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from "react-toastify";
+import MaskedCursor from "./Components/MaskedCursor";
 
 const roboto = Roboto_Condensed({
   weight: ['300', '400', '600', '700'],
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body
         className={`${roboto.className} antialiased`}
       >
+        <MaskedCursor/>
         <Navbar/>
         <ToastContainer/>
         {children}
