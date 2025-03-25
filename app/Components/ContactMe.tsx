@@ -42,8 +42,8 @@ const ContactMe = () => {
         };
     }
   return (
-    <div className='flex flex-col lg:flex-row items-center min-h-[80vh] md:min-h-screen px-5'>
-        <div className='flex flex-col items-center lg:items-start justify-start p-5 lg:p-10 text-[#2f2f2f] w-full'>
+    <div className='flex flex-col lg:flex-row items-center justify-center min-h-[100vh] md:min-h-screen px-5 gap-x-20'>
+        <div className='flex flex-col items-center lg:items-end justify-start p-5 lg:p-10 text-[#2f2f2f] w-full'>
             <div className='text-3xl lg:text-6xl font-[400] max-w-lg text-center lg:text-left'>
                 <p>INTERESTED IN WORKING TOGETHER</p>
             </div>
@@ -56,7 +56,7 @@ const ContactMe = () => {
             </div>
         </div>
 
-        <div className={`${roboto.className} flex flex-col lg:flex-row items-center justify-center w-full mt-5 lg:mt-0`}>
+        <div className={`${roboto.className} flex flex-col lg:flex-row items-center lg:justify-start justify-center w-full mt-5 lg:mt-0`}>
             <ul className='flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4'>
                 <li className='relative list-none'>
                     <a href='#' className='group relative block w-full sm:w-[150px] h-[60px] text-left bg-white p-3 transform rotate-[-30deg] skew-x-[25deg] transition-all duration-500 shadow-[-15px_15px_8px_rgba(0,0,0,0.5)] 
