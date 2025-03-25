@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
   useEffect(() => {
-    let mm = gsap.matchMedia();
+    const mm = gsap.matchMedia();
 
     mm.add("(min-width: 768px)", () => {
       gsap.to(".scroll-col", {

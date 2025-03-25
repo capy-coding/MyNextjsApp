@@ -4,9 +4,7 @@ import { Roboto_Condensed } from 'next/font/google';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
     faYoutube,
-    faGooglePlusG,
     faLinkedin,
-    faGoogle,
     faGooglePlus
  } from '@fortawesome/free-brands-svg-icons';
  import { toast } from 'react-toastify';
@@ -31,6 +29,7 @@ const ContactMe = () => {
                 progress: undefined,
             });
         } catch (err) {
+            console.error(err);
             toast.error("Failed to copy email", {
                 position: "top-center",
                 autoClose: 5000,

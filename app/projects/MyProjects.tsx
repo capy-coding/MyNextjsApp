@@ -3,13 +3,12 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
   useEffect(() => {
-    let mm = gsap.matchMedia();
+    const mm = gsap.matchMedia();
 
     mm.add("(min-width: 768px)", () => {
       gsap.to(".scroll-col", {

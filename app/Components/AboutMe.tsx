@@ -32,7 +32,7 @@ const AboutMe = () => {
 
         <div className='text-content text-base mt-10 max-w-3xl opacity-0 text-center'>
             <p>As a passionate developer with expertise in creating custom, mobile-responsive websites, I thrive on transforming client visions into functional, high-performing digital experiences. My focus is on creating seamless, user-friendly websites
-                that are optimised for speed, SEO, and overall efficiency. With a background in Software Engineering, I've worked across various technologies to design and implement solutions that drive growth and engagement.
+                that are optimised for speed, SEO, and overall efficiency. With a background in Software Engineering, I have worked across various technologies to design and implement solutions that drive growth and engagement.
             </p>
         </div>
     </div>
